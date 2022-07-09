@@ -1,23 +1,27 @@
+import java.util.HashSet;
+
 public class BestBuySell {
     public static void main(String[] args) {
         int[] a = {7,1,5,3,6,4};
 
         /* Approuch 1 */
-        // int tD = 0;
-        // int d = 0;
-        // for(int i =0; i<a.length; i++){
-
-        // for (int j = i; j < a.length; j++) {
-        // if(a[j]-a[i]>d){
-        // d=a[j]-a[i];
-        // System.out.println(d);
-        // }
-        // }
-        // if(d>tD){
-        // tD=d;
-        // }
-        // }
-
+        int tD = 0;
+        int d = 0;
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i; j < a.length; j++) {
+                if (a[j] - a[i] > d) {
+                    d = a[j] - a[i];
+                    System.out.println(d);
+                }
+            }
+            if (d > tD) {
+                tD = d;
+            }
+        }
+        HashSet<Integer> set = new HashSet<>();
+        set.add(1);
+        set.contains(4);
+        set.remove(3);
         // System.out.println("tD: "+tD);
         // System.out.println("d: "+d);
         
@@ -31,7 +35,6 @@ public class BestBuySell {
             if(a[i]<a[l]){
                 l=i;
             }    
-
             if(d<a[i]-a[l]){
                 d=a[i]-a[l];
             }
